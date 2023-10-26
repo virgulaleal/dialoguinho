@@ -1,0 +1,137 @@
+[gd_resource type="Resource" script_class="Sequence" load_steps=16 format=3 uid="uid://cfdwxqpu5onso"]
+
+[ext_resource type="Script" path="res://Sequence.gd" id="1_djbmo"]
+[ext_resource type="Resource" uid="uid://dajo6rkflo5c3" path="res://personagens/VirgulaPersonagem.tres" id="1_is8uv"]
+[ext_resource type="Script" path="res://FalaEvento.gd" id="2_vv1og"]
+[ext_resource type="Resource" uid="uid://cjvueu05xr20t" path="res://personagens/ElainePersonagem.tres" id="3_kndp5"]
+[ext_resource type="Resource" uid="uid://c1xxyaxjn0d75" path="res://personagens/CosmoPersongem.tres" id="4_dkvxv"]
+
+[sub_resource type="Resource" id="Resource_a11ka"]
+resource_name = "Beleza galera, agora fala todo mundo, um de cada vez, pra eu testar aqui."
+script = ExtResource("2_vv1og")
+personagem = ExtResource("1_is8uv")
+texto = "Beleza galera, agora fala todo mundo, um de cada vez, pra eu testar aqui."
+lado = 0
+nome_override = ""
+override_nome_color = false
+nome_color_override = Color(0.956863, 0.956863, 0.956863, 1)
+override_texto_color = false
+texto_color_override = Color(1, 1, 1, 1)
+force_flip = false
+
+[sub_resource type="Resource" id="Resource_yae4v"]
+resource_name = "Oi, tudo bem? Eu sou a Elaine. Meu texto é dessa cor, é assim que- hã... esse é o meu Jeito Ninja!"
+script = ExtResource("2_vv1og")
+personagem = ExtResource("3_kndp5")
+texto = "Oi, tudo bem? Eu sou a Elaine. Meu texto é dessa cor, é assim que- hã... esse é o meu Jeito Ninja!"
+lado = 1
+nome_override = ""
+override_nome_color = false
+nome_color_override = Color(0.956863, 0.956863, 0.956863, 1)
+override_texto_color = false
+texto_color_override = Color(1, 1, 1, 1)
+force_flip = false
+
+[sub_resource type="Resource" id="Resource_m4xhk"]
+resource_name = "..."
+script = ExtResource("2_vv1og")
+texto = "..."
+lado = 2
+nome_override = ""
+override_nome_color = false
+nome_color_override = Color(0.956863, 0.956863, 0.956863, 1)
+override_texto_color = false
+texto_color_override = Color(1, 1, 1, 1)
+force_flip = false
+
+[sub_resource type="Resource" id="Resource_8pv47"]
+resource_name = "Vai, Cosmo, agora é você."
+script = ExtResource("2_vv1og")
+personagem = ExtResource("1_is8uv")
+texto = "Vai, Cosmo, agora é você."
+lado = 0
+nome_override = ""
+override_nome_color = false
+nome_color_override = Color(0.956863, 0.956863, 0.956863, 1)
+override_texto_color = false
+texto_color_override = Color(1, 1, 1, 1)
+force_flip = false
+
+[sub_resource type="Resource" id="Resource_1b6as"]
+resource_name = "Não me enche o saco, não."
+script = ExtResource("2_vv1og")
+personagem = ExtResource("4_dkvxv")
+texto = "Não me enche o saco, não."
+lado = 1
+nome_override = ""
+override_nome_color = false
+nome_color_override = Color(0.956863, 0.956863, 0.956863, 1)
+override_texto_color = false
+texto_color_override = Color(1, 1, 1, 1)
+force_flip = false
+
+[sub_resource type="Resource" id="Resource_qi0pa"]
+resource_name = "Obrigado."
+script = ExtResource("2_vv1og")
+personagem = ExtResource("1_is8uv")
+texto = "Obrigado."
+lado = 0
+nome_override = ""
+override_nome_color = false
+nome_color_override = Color(0.956863, 0.956863, 0.956863, 1)
+override_texto_color = false
+texto_color_override = Color(1, 1, 1, 1)
+force_flip = false
+
+[sub_resource type="Resource" id="Resource_j2be4"]
+resource_name = "Não enche o saco dele não, Virgula."
+script = ExtResource("2_vv1og")
+personagem = ExtResource("3_kndp5")
+texto = "Não enche o saco dele não, Virgula."
+lado = 1
+nome_override = ""
+override_nome_color = false
+nome_color_override = Color(0.956863, 0.956863, 0.956863, 1)
+override_texto_color = false
+texto_color_override = Color(1, 1, 1, 1)
+force_flip = false
+
+[sub_resource type="Resource" id="Resource_0tfad"]
+resource_name = "Argh... e aí, Tampinha, ficou bom?"
+script = ExtResource("2_vv1og")
+personagem = ExtResource("1_is8uv")
+texto = "Argh... e aí, Tampinha, ficou bom?"
+lado = 0
+nome_override = ""
+override_nome_color = false
+nome_color_override = Color(0.956863, 0.956863, 0.956863, 1)
+override_texto_color = false
+texto_color_override = Color(1, 1, 1, 1)
+force_flip = false
+
+[sub_resource type="Resource" id="Resource_wqdcp"]
+resource_name = "Ficou uma bosta..."
+script = ExtResource("2_vv1og")
+texto = "Ficou uma bosta..."
+lado = 2
+nome_override = ""
+override_nome_color = false
+nome_color_override = Color(0.956863, 0.956863, 0.956863, 1)
+override_texto_color = false
+texto_color_override = Color(1, 1, 1, 1)
+force_flip = false
+
+[sub_resource type="Resource" id="Resource_qhkb3"]
+script = ExtResource("2_vv1og")
+texto = ""
+lado = 2
+nome_override = ""
+override_nome_color = false
+nome_color_override = Color(0.956863, 0.956863, 0.956863, 1)
+override_texto_color = false
+texto_color_override = Color(1, 1, 1, 1)
+force_flip = false
+
+[resource]
+script = ExtResource("1_djbmo")
+eventos = Array[Resource("res://Evento.gd")]([SubResource("Resource_a11ka"), SubResource("Resource_yae4v"), SubResource("Resource_m4xhk"), SubResource("Resource_8pv47"), SubResource("Resource_1b6as"), SubResource("Resource_qi0pa"), SubResource("Resource_j2be4"), SubResource("Resource_0tfad"), SubResource("Resource_wqdcp"), SubResource("Resource_qhkb3")])

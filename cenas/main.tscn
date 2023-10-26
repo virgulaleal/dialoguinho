@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxvvlck8lej3f"]
+
+[ext_resource type="Script" path="res://cenas/main.gd" id="1_lurn2"]
+[ext_resource type="FontFile" uid="uid://dhu06q48b4iwp" path="res://fontes/IverText-Regular.ttf" id="3_eyx14"]
+[ext_resource type="AudioStream" uid="uid://bai852oulkhvk" path="res://audio/fronk.wav" id="4_x60e0"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1c5dd"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lurn2")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="FrameL" type="TextureRect" parent="HUD"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.5)
+anchors_preset = -1
+anchor_left = 0.245312
+anchor_top = 0.366667
+anchor_right = 0.398438
+anchor_bottom = 0.638889
+texture = SubResource("CompressedTexture2D_1c5dd")
+metadata/_edit_use_anchors_ = true
+
+[node name="FrameR" type="TextureRect" parent="HUD"]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.63125
+anchor_top = 0.366667
+anchor_right = 0.784375
+anchor_bottom = 0.638889
+offset_left = -39.0
+offset_right = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_1c5dd")
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="LegendaLabel" type="Label" parent="HUD"]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.09375
+anchor_top = 0.688889
+anchor_right = 0.90625
+anchor_bottom = 0.913889
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_eyx14")
+theme_override_font_sizes/font_size = 48
+text = "Estou aqui no Playcenter, o maior parque de diversões da cidade de São Paulo"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="HUD"]
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.0888889
+anchor_right = 0.65
+anchor_bottom = 0.177778
+text = "Pressione \"E\" para avançar."
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VozPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_x60e0")
+bus = &"Voz"
