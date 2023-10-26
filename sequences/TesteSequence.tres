@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Sequence" load_steps=20 format=3 uid="uid://cfdwxqpu5onso"]
+[gd_resource type="Resource" script_class="Sequence" load_steps=21 format=3 uid="uid://cfdwxqpu5onso"]
 
 [ext_resource type="Script" path="res://Sequence.gd" id="1_djbmo"]
 [ext_resource type="Resource" uid="uid://dajo6rkflo5c3" path="res://personagens/VirgulaPersonagem.tres" id="1_is8uv"]
@@ -72,6 +72,19 @@ nome_color_override = Color(0.956863, 0.956863, 0.956863, 1)
 override_texto_color = false
 texto_color_override = Color(1, 1, 1, 1)
 force_flip = false
+
+[sub_resource type="Resource" id="Resource_enucp"]
+resource_name = "[Sai ] (elaine)"
+script = ExtResource("3_4203e")
+etiqueta = "elaine"
+modo = 2
+position = Vector2(0, 0)
+scale = Vector2(1, 1)
+duration = 1.0
+transition = 0
+easing = 2
+filter = 1
+segura = false
 
 [sub_resource type="Resource" id="Resource_8pv47"]
 resource_name = "Vai, Cosmo, agora é você."
@@ -163,4 +176,4 @@ force_flip = false
 
 [resource]
 script = ExtResource("1_djbmo")
-eventos = Array[Resource("res://Evento.gd")]([SubResource("Resource_a11ka"), SubResource("Resource_cxr5v"), SubResource("Resource_yae4v"), SubResource("Resource_s8vl3"), SubResource("Resource_m4xhk"), SubResource("Resource_8pv47"), SubResource("Resource_1b6as"), SubResource("Resource_qi0pa"), SubResource("Resource_j2be4"), SubResource("Resource_0tfad"), SubResource("Resource_wqdcp"), SubResource("Resource_qhkb3")])
+eventos = Array[Resource("res://Evento.gd")]([SubResource("Resource_a11ka"), SubResource("Resource_cxr5v"), SubResource("Resource_yae4v"), SubResource("Resource_s8vl3"), SubResource("Resource_m4xhk"), SubResource("Resource_enucp"), SubResource("Resource_8pv47"), SubResource("Resource_1b6as"), SubResource("Resource_qi0pa"), SubResource("Resource_j2be4"), SubResource("Resource_0tfad"), SubResource("Resource_wqdcp"), SubResource("Resource_qhkb3")])

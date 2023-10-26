@@ -134,7 +134,7 @@ func advance_dialogo() -> void:
 		# SAI
 		elif evento.modo == TexturaEvento.modos.SAI:
 			
-			var texture_rects: Array[TextureRect] = get_from_etiqueta(evento.etiqueta, "textura") as Array[TextureRect]
+			var texture_rects: Array[Node] = get_from_etiqueta(evento.etiqueta, "textura")
 			
 			for texture_rect in texture_rects:
 				tween.tween_property(texture_rect, "modulate:a", 0.0, evento.duration).set_trans(evento.transition).set_ease(evento.easing)
