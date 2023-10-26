@@ -16,7 +16,8 @@ const PAUSAS: Dictionary = {
 enum dialogo_states {
 	SETUP,
 	IDLE,
-	TYPING
+	TYPING,
+	HOLD
 }
 
 var dialogo_state: dialogo_states = dialogo_states.SETUP
@@ -28,6 +29,7 @@ var sequence_index: int = 0
 @onready var frame_l: TextureRect = %FrameL
 @onready var frame_r: TextureRect = %FrameR
 @onready var legenda_label: Label = %LegendaLabel
+@onready var palco: Control = %Palco
 
 
 func _ready() -> void:
@@ -100,9 +102,71 @@ func advance_dialogo() -> void:
 		
 		await typewrite(evento.texto, FREQUENCIA)
 		
-		sequence_index += 1
-		
 		dialogo_state = dialogo_states.IDLE
+	
+	elif evento is TexturaEvento:
+		
+		if evento.segura:
+			dialogo_state = dialogo_states.HOLD
+		
+		var tween: Tween = create_tween()
+		tween.set_parallel()
+		
+		# ENTRA
+		if evento.modo == TexturaEvento.modos.ENTRA:
+			
+			var texture_rect: TextureRect = TextureRect.new()
+			
+			texture_rect.modulate.a = 0.0
+			texture_rect.texture = evento.textura
+			texture_rect.set_meta("tipo", "textura")
+			texture_rect.set_meta("etiqueta", evento.etiqueta)
+			
+			texture_rect.position = evento.position
+			texture_rect.scale = evento.scale
+			
+			texture_rect.texture_filter = evento.filter
+			
+			palco.add_child(texture_rect)
+			
+			tween.tween_property(texture_rect, "modulate:a", 1.0, evento.duration).set_trans(evento.transition).set_ease(evento.easing)
+		
+		# SAI
+		elif evento.modo == TexturaEvento.modos.SAI:
+			
+			var texture_rects: Array[TextureRect] = get_from_etiqueta(evento.etiqueta, "textura") as Array[TextureRect]
+			
+			for texture_rect in texture_rects:
+				tween.tween_property(texture_rect, "modulate:a", 0.0, evento.duration).set_trans(evento.transition).set_ease(evento.easing)
+		
+		# MOVE
+		elif evento.modo == TexturaEvento.modos.MOVE:
+			
+			var texture_rects: Array[Node] = get_from_etiqueta(evento.etiqueta, "textura")
+			
+			for texture_rect in texture_rects:
+				tween.tween_property(texture_rect, "position", evento.position, evento.duration).set_trans(evento.transition).set_ease(evento.easing)
+				tween.tween_property(texture_rect, "scale", evento.scale, evento.duration).set_trans(evento.transition).set_ease(evento.easing)
+		
+		if evento.segura:
+			print("waiting")
+			await tween.finished
+			print("waited")
+			dialogo_state = dialogo_states.IDLE
+	
+	sequence_index += 1
+
+
+func get_from_etiqueta(etiqueta: String, tipo: String = "") -> Array[Node]:
+	
+	var nodes: Array[Node] = []
+	
+	for node in palco.get_children():
+		if node.get_meta("tipo") == tipo:
+			if node.get_meta("etiqueta") == etiqueta:
+				nodes.append(node)
+	
+	return nodes
 
 
 func typewrite(text: String, frequencia: float) -> void:
